@@ -10,7 +10,7 @@ import lecturerService from '../services/lecturerService';
 import LogoutButton from '../components/LogoutButton';
 import BackButton from '../components/BackButton';
 
-const CoursePage = () => {
+function CoursePage() {
     const headers = ['ID', 'Course Code', 'Course Name', 'Description', 'Lecturer ID', 'Actions'];
     const [courses, setCourses] = useState([]);
     const [lecturerIds, setLecturerIds] = useState([]);
@@ -38,7 +38,7 @@ const CoursePage = () => {
                     id: lecturer.id,
                     name: lecturer.name,
                 }));
-                setLecturerIds(lecturerOptions); // Store lecturer objects with both id and name
+                setLecturerIds(lecturerOptions);
             } catch (error) {
                 console.error('Error fetching lecturer IDs:', error);
             }
@@ -125,7 +125,7 @@ const CoursePage = () => {
                     initialData={selectedCourse} 
                     onSubmit={handleUpdateCourse} 
                     onClose={() => setUpdateModalOpen(false)} 
-                    existingLecturerIds={lecturerIds} // Pass lecturer data here
+                    existingLecturerIds={lecturerIds}
                 />
             )}
         </div>

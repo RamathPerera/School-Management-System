@@ -1,9 +1,6 @@
-// src/services/authService.js
-
 import api from '../api';
 
 const authService = {
-    // Login function
     login: async (user_name, password) => {
         try {
             const response = await api.post('/api/login', {
@@ -13,7 +10,6 @@ const authService = {
             const { token } = response.data;
 
             if (token) {
-                // Store token in localStorage
                 localStorage.setItem('token', token);
             }
 
@@ -24,7 +20,6 @@ const authService = {
         }
     },
 
-    // Register function
     register: async (user_name, password) => {
         try {
             const response = await api.post('/api/register', {
@@ -38,13 +33,10 @@ const authService = {
         }
     },
 
-    // Logout function
     logout: () => {
-        // Remove token from localStorage
         localStorage.removeItem('token');
     },
 
-    // Check if the user is authenticated
     isAuthenticated: () => {
         return !!localStorage.getItem('token');
     }

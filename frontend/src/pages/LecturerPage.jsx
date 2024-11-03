@@ -9,7 +9,7 @@ import lecturerService from '../services/lecturerService';
 import LogoutButton from '../components/LogoutButton';
 import BackButton from '../components/BackButton';
 
-const LecturerPage = () => {
+function LecturerPage() {
     const headers = ['ID', 'Name', 'Age', 'Address', 'Gender', 'Actions'];
     const [lecturers, setLecturers] = useState([]);
     const [isAddModalOpen, setAddModalOpen] = useState(false);

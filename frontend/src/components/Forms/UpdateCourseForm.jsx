@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const UpdateCourseForm = ({ initialData, onSubmit, onClose, existingLecturerIds }) => {
+function UpdateCourseForm({ initialData, onSubmit, onClose, existingLecturerIds }) {
     const [formData, setFormData] = useState(initialData);
 
     const handleChange = (e) => {

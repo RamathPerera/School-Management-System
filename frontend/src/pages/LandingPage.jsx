@@ -1,10 +1,9 @@
-// src/components/LandingPage.js
 import React, { useState } from 'react';
 import Button from '../components/Button';
 import LoginForm from '../components/Forms/LoginForm'
 import RegisterForm from '../components/Forms/RegisterForm';
 
-const LandingPage = () => {
+function LandingPage() {
     const [isLoginModalOpen, setLoginModalOpen] = useState(false);
     const [isRegisterModalOpen, setRegisterModalOpen] = useState(false);
 

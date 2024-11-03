@@ -1,12 +1,11 @@
 import api from '../api';
 
-// Service to handle lecturer-related CRUD operations
 const lecturerService = {
     getAllLecturers: async () => {
         const response = await api.get('/lecturers', {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${localStorage.getItem('token')}`,  // Add token from localStorage
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             }
         });
         return response.data;
@@ -15,7 +14,7 @@ const lecturerService = {
         const response = await api.post('/lecturers', lecturer, {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${localStorage.getItem('token')}`,  // Add token from localStorage
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             }
         });
         return response.data;
@@ -24,7 +23,7 @@ const lecturerService = {
         const response = await api.put(`/lecturers/${lecturerId}`, updatedData, {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${localStorage.getItem('token')}`,  // Add token from localStorage
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             }
         });
         return response.data;
@@ -33,7 +32,7 @@ const lecturerService = {
         const response = await api.delete(`/lecturers/${lecturerId}`, {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${localStorage.getItem('token')}`,  // Add token from localStorage
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             }
         });
         return response.data;

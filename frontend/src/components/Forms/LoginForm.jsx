@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import authService from '../../services/authServices';
 import { useNavigate } from 'react-router-dom';
 
-const LoginForm = ({ isOpen, onClose }) => {
+function LoginForm({ isOpen, onClose }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -13,10 +13,10 @@ const LoginForm = ({ isOpen, onClose }) => {
     const handleLogin = async (event) => {
         event.preventDefault();
         try {
-            await authService.login(username, password); // Pass username and password
+            await authService.login(username, password);
             onClose();
-            navigate('/home'); // Optional: refresh UI after login
-            window.location.reload(); // Optional: Force page reload if needed
+            navigate('/home');
+            window.location.reload();
         } catch (error) {
             setErrorMessage(error.message);
         }

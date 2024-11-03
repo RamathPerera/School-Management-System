@@ -4,7 +4,7 @@ import studentService from '../services/studentService';
 import courseService from '../services/courseService';
 import Swal from 'sweetalert2';
 
-const EnrollmentForm = ({ onEnrollmentSuccess }) => {
+function EnrollmentForm({ onEnrollmentSuccess }) {
     const [students, setStudents] = useState([]);
     const [courses, setCourses] = useState([]);
     const [selectedStudent, setSelectedStudent] = useState('');

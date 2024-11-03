@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 
-const AddStudentForm = ({ onSubmit, onClose }) => {
+function AddStudentForm({ onSubmit, onClose }) {
     const [formData, setFormData] = useState({
         name: '',
         age: '',
         address: '',
         gender: '',
-        birth_certificate: null, // Change to null to hold file
+        birth_certificate: null,
     });
 
     const handleChange = (e) => {
         const { name, value, type, files } = e.target;
         if (type === "file") {
-            setFormData({ ...formData, [name]: files[0] }); // Store the file object
+            setFormData({ ...formData, [name]: files[0] });
         } else {
             setFormData({ ...formData, [name]: value });
         }

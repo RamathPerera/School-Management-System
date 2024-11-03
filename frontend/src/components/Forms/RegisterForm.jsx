@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import authService from '../../services/authServices';
 
-const RegisterForm = ({ isOpen, onClose }) => {
+function RegisterForm({ isOpen, onClose }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [reenterPassword, setReenterPassword] = useState('');
@@ -19,8 +19,6 @@ const RegisterForm = ({ isOpen, onClose }) => {
         try {
             await authService.register(username, password);
             onClose();
-            
-            // SweetAlert notification for successful registration
             Swal.fire({
                 title: 'Registration Successful!',
                 text: 'You have successfully registered. Please login to continue.',

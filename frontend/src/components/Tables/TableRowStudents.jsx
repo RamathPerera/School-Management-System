@@ -1,4 +1,3 @@
-// components/Tables/TableRowStudents.js
 import React from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 
@@ -13,7 +12,7 @@ function TableRowStudents({ row, onEdit, onDelete }) {
             <td className="p-3">
                 {row.birth_certificate ? (
                     <img
-                        src={`http://localhost:5000/images/${row.birth_certificate}`} // Ensure this URL is correct
+                        src={`http://localhost:5000/images/${row.birth_certificate}`}
                         alt="Birth Certificate"
                         className="w-20 h-20 object-cover rounded"
                     />

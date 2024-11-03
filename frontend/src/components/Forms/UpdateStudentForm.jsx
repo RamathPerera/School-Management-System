@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const UpdateStudentForm = ({ initialData, onSubmit, onClose }) => {
+function UpdateStudentForm({ initialData, onSubmit, onClose }) {
     const [formData, setFormData] = useState(initialData);
-    const [file, setFile] = useState(null); // To hold the file input
+    const [file, setFile] = useState(null);
 
     const handleChange = (e) => {
         const { name, value, type, files } = e.target;
         if (type === "file") {
-            setFile(files[0]); // Store the new file
+            setFile(files[0]);
         } else {
             setFormData({ ...formData, [name]: value });
         }
@@ -15,7 +15,7 @@ const UpdateStudentForm = ({ initialData, onSubmit, onClose }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const dataToSubmit = { ...formData, birth_certificate: file }; // Include the file
+        const dataToSubmit = { ...formData, birth_certificate: file };
         onSubmit(dataToSubmit);
         onClose();
     };

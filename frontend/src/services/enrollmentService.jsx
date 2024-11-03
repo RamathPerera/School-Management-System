@@ -1,12 +1,11 @@
 import api from '../api';
 
-// Service for enrollment-related operations
 const enrollmentService = {
     enrollStudent: async (studentId, courseId) => {
         const response = await api.post('/enrollments/enroll', { studentId, courseId }, {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${localStorage.getItem('token')}`,  // Add token from localStorage
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             }
         });
         return response.data;
@@ -15,7 +14,7 @@ const enrollmentService = {
         const response = await api.get(`/enrollments/student/${studentId}`, {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${localStorage.getItem('token')}`,  // Add token from localStorage
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             }
         });
         return response.data;
@@ -24,7 +23,7 @@ const enrollmentService = {
         const response = await api.get(`/enrollments/course/${courseId}`, {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${localStorage.getItem('token')}`,  // Add token from localStorage
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             }
         });
         return response.data;

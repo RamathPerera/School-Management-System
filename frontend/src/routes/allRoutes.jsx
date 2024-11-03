@@ -15,7 +15,7 @@ function AllRoutes() {
             setIsAuthenticated(!!localStorage.getItem('token'));
         };
 
-        window.addEventListener('storage', handleStorageChange); // Listen for localStorage changes
+        window.addEventListener('storage', handleStorageChange);
 
         return () => {
             window.removeEventListener('storage', handleStorageChange);

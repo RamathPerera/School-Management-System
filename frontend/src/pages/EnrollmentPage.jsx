@@ -5,7 +5,7 @@ import CourseEnrollments from '../components/CourseEnrollments';
 import LogoutButton from '../components/LogoutButton';
 import BackButton from '../components/BackButton';
 
-const EnrollmentPage = () => {
+function EnrollmentPage() {
     return (
         <div className="p-6">
             <div className='flex justify-between items-center w-3/4'>

@@ -1,16 +1,14 @@
-// src/components/LogoutButton.js
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import authService from '../services/authServices';
 
-const LogoutButton = () => {
+function LogoutButton() {
     const navigate = useNavigate();
 
     const handleLogout = () => {
         authService.logout();
         navigate('/');
-        window.location.reload(); // Optional: Force page reload if needed
+        window.location.reload();
     };
 
     return (

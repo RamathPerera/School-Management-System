@@ -9,7 +9,7 @@ import studentService from '../services/studentService';
 import LogoutButton from '../components/LogoutButton';
 import BackButton from '../components/BackButton';
 
-const StudentPage = () => {
+function StudentPage() {
     const headers = ['ID', 'Name', 'Age', 'Address', 'Gender', 'Birth Certificate', 'Actions'];
     const [students, setStudents] = useState([]);
     const [isAddModalOpen, setAddModalOpen] = useState(false);
