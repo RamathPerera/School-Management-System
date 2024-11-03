@@ -1,7 +1,7 @@
-import bcrypt from 'bcryptjs'; // Update import for bcryptjs
+import bcrypt from 'bcryptjs';
 import { Admin } from '../models/index.js';
-import jwt from 'jsonwebtoken'; // Update import for jsonwebtoken
-const { JWT_SECRET } = process.env; // No change needed here
+import jwt from 'jsonwebtoken';
+const { JWT_SECRET } = process.env;
 
 export const register = async (req, res) => {
     try {
@@ -18,7 +18,7 @@ export const register = async (req, res) => {
 
         return res.status(201).send({
             msg: 'User registered successfully!',
-            userId: newUser.id  // Assuming you want to return the user ID
+            userId: newUser.id
         });
     } catch (err) {
         return res.status(500).send({ msg: err.message });
