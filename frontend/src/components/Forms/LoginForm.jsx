@@ -16,6 +16,7 @@ const LoginForm = ({ isOpen, onClose }) => {
             await authService.login(username, password); // Pass username and password
             onClose();
             navigate('/home'); // Optional: refresh UI after login
+            window.location.reload(); // Optional: Force page reload if needed
         } catch (error) {
             setErrorMessage(error.message);
         }

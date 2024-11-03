@@ -9,7 +9,8 @@ const LogoutButton = () => {
 
     const handleLogout = () => {
         authService.logout();
-        navigate('/'); // Redirect to login page after logout
+        navigate('/');
+        window.location.reload(); // Optional: Force page reload if needed
     };
 
     return (
