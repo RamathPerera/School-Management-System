@@ -5,12 +5,17 @@ import StudentPage from '../pages/StudentPage.jsx';
 import LecturerPage from '../pages/LecturerPage.jsx';
 import CoursePage from '../pages/CoursePage.jsx';
 import EnrollmentPage from '../pages/EnrollmentPage.jsx';
+import LandingPage from '../pages/LandingPage.jsx';
 
 function AllRoutes() {
   return (
     <Routes>
       <Route
         path="/"
+        element={<LandingPage />}
+      />
+      <Route
+        path="/home"
         element={<HomePage />}
       />
       <Route
