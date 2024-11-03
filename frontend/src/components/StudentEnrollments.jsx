@@ -28,10 +28,11 @@ function StudentEnrollments() {
 
     return (
         <div>
-            <h3>View Enrollments for a Student</h3>
-            <div className="mb-4">
-                <label>Student:</label>
+            <h3 className="text-xl font-semibold mb-4">View Enrollments for a Student</h3>
+            <div className="flex items-center mb-4">
+                <label className="mr-2 font-medium">Student:</label>
                 <select
+                    className="border border-gray-300 rounded px-2 py-1"
                     onChange={(e) => setSelectedStudentId(e.target.value)}
                     value={selectedStudentId}
                 >
@@ -42,22 +43,25 @@ function StudentEnrollments() {
                         </option>
                     ))}
                 </select>
-                <button onClick={fetchStudentCourses} className="ml-4 bg-purple-700 text-white px-4 py-2 rounded">
+                <button
+                    onClick={fetchStudentCourses}
+                    className="ml-4 bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800 transition"
+                >
                     View Enrollments
                 </button>
             </div>
             {studentCourses && (
-                <div>
-                    <h4>Courses for {studentCourses.student.name}</h4>
-                    <ul>
+                <div className="mt-4">
+                    <h4 className="font-semibold">Courses for {studentCourses.student.name}</h4>
+                    <ul className="list-disc list-inside mt-2">
                         {studentCourses.student.Courses.map(course => (
-                            <li key={course.id}>{course.course_name}</li>
+                            <li key={course.id} className="text-gray-700">{course.course_name}</li>
                         ))}
                     </ul>
                 </div>
             )}
         </div>
     );
-};
+}
 
 export default StudentEnrollments;

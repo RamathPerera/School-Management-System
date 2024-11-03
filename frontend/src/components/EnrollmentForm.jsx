@@ -41,10 +41,14 @@ function EnrollmentForm({ onEnrollmentSuccess }) {
 
     return (
         <div>
-            <h3>Enroll Student in Course</h3>
+            <h3 className="text-xl font-semibold mb-4">Enroll Student in Course</h3>
             <div className="mb-4">
-                <label>Student:</label>
-                <select onChange={(e) => setSelectedStudent(e.target.value)} value={selectedStudent}>
+                <label className="font-medium">Student:</label>
+                <select
+                    className="border border-gray-300 rounded px-2 py-1 w-full"
+                    onChange={(e) => setSelectedStudent(e.target.value)}
+                    value={selectedStudent}
+                >
                     <option value="">Select Student</option>
                     {students.map(student => (
                         <option key={student.id} value={student.id}>
@@ -54,8 +58,12 @@ function EnrollmentForm({ onEnrollmentSuccess }) {
                 </select>
             </div>
             <div className="mb-4">
-                <label>Course:</label>
-                <select onChange={(e) => setSelectedCourse(e.target.value)} value={selectedCourse}>
+                <label className="font-medium">Course:</label>
+                <select
+                    className="border border-gray-300 rounded px-2 py-1 w-full"
+                    onChange={(e) => setSelectedCourse(e.target.value)}
+                    value={selectedCourse}
+                >
                     <option value="">Select Course</option>
                     {courses.map(course => (
                         <option key={course.id} value={course.id}>
@@ -64,9 +72,14 @@ function EnrollmentForm({ onEnrollmentSuccess }) {
                     ))}
                 </select>
             </div>
-            <button onClick={handleEnrollment} className="bg-purple-700 text-white px-4 py-2 rounded">Enroll</button>
+            <button
+                onClick={handleEnrollment}
+                className="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800 transition w-full"
+            >
+                Enroll
+            </button>
         </div>
     );
-};
+}
 
 export default EnrollmentForm;
