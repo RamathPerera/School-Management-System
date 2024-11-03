@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const UpdateLecturerForm = ({ initialData, onSubmit, onClose }) => {
+function UpdateLecturerForm({ initialData, onSubmit, onClose }) {
     const [formData, setFormData] = useState(initialData);
 
     const handleChange = (e) => {

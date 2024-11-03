@@ -1,6 +1,5 @@
 import { Lecturer, Course } from '../models/index.js';
 
-// Create a new course
 export const createCourse = async (req, res) => {
     try {
         const course = await Course.create(req.body);
@@ -10,7 +9,6 @@ export const createCourse = async (req, res) => {
     }
 };
 
-// Get all courses
 export const getAllCourses = async (req, res) => {
     try {
         const courses = await Course.findAll();
@@ -20,7 +18,6 @@ export const getAllCourses = async (req, res) => {
     }
 };
 
-// Get a course by ID
 export const getCourseById = async (req, res) => {
     try {
         const course = await Course.findByPk(req.params.id);
@@ -34,7 +31,6 @@ export const getCourseById = async (req, res) => {
     }
 };
 
-// Update a course
 export const updateCourse = async (req, res) => {
     try {
         const course = await Course.findByPk(req.params.id);
@@ -49,7 +45,6 @@ export const updateCourse = async (req, res) => {
     }
 };
 
-// Delete a course
 export const deleteCourse = async (req, res) => {
     try {
         const course = await Course.findByPk(req.params.id);
@@ -63,7 +58,6 @@ export const deleteCourse = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
-
 
 export const assignLecturerToCourse = async (req, res) => {
     const { courseId, lecturerId } = req.body;

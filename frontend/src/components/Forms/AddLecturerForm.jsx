@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AddLecturerForm = ({ onSubmit, onClose }) => {
+function AddLecturerForm({ onSubmit, onClose }) {
     const [formData, setFormData] = useState({
         name: '',
         age: '',

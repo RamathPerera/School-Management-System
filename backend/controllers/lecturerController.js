@@ -1,6 +1,5 @@
 import { Lecturer } from '../models/index.js';
 
-// Create a new lecturer
 export const createLecturer = async (req, res) => {
     try {
         const lecturer = await Lecturer.create(req.body);
@@ -10,7 +9,6 @@ export const createLecturer = async (req, res) => {
     }
 };
 
-// Get all lecturers
 export const getAllLecturers = async (req, res) => {
     try {
         const lecturers = await Lecturer.findAll();
@@ -20,7 +18,6 @@ export const getAllLecturers = async (req, res) => {
     }
 };
 
-// Get a lecturer by ID
 export const getLecturerById = async (req, res) => {
     try {
         const lecturer = await Lecturer.findByPk(req.params.id);
@@ -34,7 +31,6 @@ export const getLecturerById = async (req, res) => {
     }
 };
 
-// Update a lecturer
 export const updateLecturer = async (req, res) => {
     try {
         const lecturer = await Lecturer.findByPk(req.params.id);
@@ -49,13 +45,12 @@ export const updateLecturer = async (req, res) => {
     }
 };
 
-// Delete a lecturer
 export const deleteLecturer = async (req, res) => {
     try {
         const lecturer = await Lecturer.findByPk(req.params.id);
         if (lecturer) {
             await lecturer.destroy();
-            res.status(204).send(); // No content
+            res.status(204).send();
         } else {
             res.status(404).json({ error: 'Lecturer not found' });
         }

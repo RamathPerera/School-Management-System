@@ -1,7 +1,8 @@
 import React from 'react';
 import DashboardCard from '../components/DashboardCard';
+import LogoutButton from '../components/LogoutButton';
 
-const HomePage = () => {
+function HomePage() {
     const cards = [
         { name: 'Students', icon: 'fa-user-graduate', link: '/students' },
         { name: 'Lecturers', icon: 'fa-chalkboard-teacher', link: '/lecturers' },
@@ -10,9 +11,12 @@ const HomePage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-purple-50 flex flex-col items-center justify-center p-4">
-            <h1 className="text-4xl font-bold text-purple-700 mb-8">School Management System</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl">
+        <div className="min-h-screen bg-purple-50 p-4">
+            <div className="flex justify-between items-center mb-8">
+                <h1 className="text-4xl font-bold text-purple-700">School Management System</h1>
+                <LogoutButton />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl mx-auto">
                 {cards.map((card, index) => (
                     <DashboardCard key={index} {...card} />
                 ))}

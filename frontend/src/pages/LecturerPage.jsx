@@ -6,8 +6,10 @@ import AddLecturerForm from '../components/Forms/AddLecturerForm';
 import UpdateLecturerForm from '../components/Forms/UpdateLecturerForm';
 import Swal from 'sweetalert2';
 import lecturerService from '../services/lecturerService';
+import LogoutButton from '../components/LogoutButton';
+import BackButton from '../components/BackButton';
 
-const LecturerPage = () => {
+function LecturerPage() {
     const headers = ['ID', 'Name', 'Age', 'Address', 'Gender', 'Actions'];
     const [lecturers, setLecturers] = useState([]);
     const [isAddModalOpen, setAddModalOpen] = useState(false);
@@ -28,6 +30,7 @@ const LecturerPage = () => {
 
     const handleAddLecturer = async (newLecturer) => {
         try {
+            console.log(newLecturer);
             const addedLecturer = await lecturerService.addLecturer(newLecturer);
             setLecturers([...lecturers, addedLecturer]);
             setAddModalOpen(false);
@@ -76,7 +79,11 @@ const LecturerPage = () => {
 
     return (
         <div className="min-h-screen bg-purple-50 p-4 flex flex-col items-center">
-            <h2 className="text-3xl font-bold text-purple-700 mb-6">Lecturers</h2>
+            <div className='flex justify-between items-center w-3/4'>
+                <BackButton />
+                <h2 className="text-3xl font-bold text-purple-700 mb-6">Lecturers</h2>
+                <LogoutButton />
+            </div>
             <table className="w-full max-w-4xl bg-white rounded-lg shadow-lg">
                 <TableHeader headers={headers} />
                 <tbody>

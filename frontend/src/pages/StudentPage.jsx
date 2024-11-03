@@ -6,8 +6,10 @@ import AddStudentForm from '../components/Forms/AddStudentForm';
 import UpdateStudentForm from '../components/Forms/UpdateStudentForm';
 import Swal from 'sweetalert2';
 import studentService from '../services/studentService';
+import LogoutButton from '../components/LogoutButton';
+import BackButton from '../components/BackButton';
 
-const StudentPage = () => {
+function StudentPage() {
     const headers = ['ID', 'Name', 'Age', 'Address', 'Gender', 'Birth Certificate', 'Actions'];
     const [students, setStudents] = useState([]);
     const [isAddModalOpen, setAddModalOpen] = useState(false);
@@ -73,7 +75,11 @@ const StudentPage = () => {
 
     return (
         <div className="min-h-screen bg-purple-50 p-4 flex flex-col items-center">
-            <h2 className="text-3xl font-bold text-purple-700 mb-6">Students</h2>
+            <div className='flex justify-between items-center w-3/4'>
+                <BackButton />
+                <h2 className="text-3xl font-bold text-purple-700 mb-6">Students</h2>
+                <LogoutButton />
+            </div>
             <table className="w-full max-w-4xl bg-white rounded-lg shadow-lg">
                 <TableHeader headers={headers} />
                 <tbody>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import enrollmentService from '../services/enrollmentService';
 import courseService from '../services/courseService';
 
-const CourseEnrollments = () => {
+function CourseEnrollments() {
     const [courses, setCourses] = useState([]);
     const [selectedCourseId, setSelectedCourseId] = useState('');
     const [courseStudents, setCourseStudents] = useState(null);
