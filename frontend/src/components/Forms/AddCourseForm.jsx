@@ -33,7 +33,7 @@ function AddCourseForm ({ onSubmit, onClose, existingLecturerIds }) {
                         required
                         value={formData.lecturerId}
                     >
-                        <option value="">Select Lecturer (Optional)</option>
+                        <option value="">Select Lecturer</option>
                         {existingLecturerIds.map((lecturer) => (
                             <option key={lecturer.id} value={lecturer.id}>
                                 {lecturer.name} (ID: {lecturer.id})
