@@ -2,7 +2,12 @@ import api from '../api';
 
 const studentService = {
     getAllStudents: async () => {
-        const response = await api.get('/students');
+        const response = await api.get('/students', {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                Authorization: `Bearer ${localStorage.getItem('token')}`,  // Add token from localStorage
+            }
+        });
         return response.data;
     },
     addStudent: async (student) => {
@@ -12,7 +17,8 @@ const studentService = {
         }
         const response = await api.post('/students', formData, {
             headers: {
-                'Content-Type': 'multipart/form-data' // Set content type for file upload
+                'Content-Type': 'multipart/form-data', // Set content type for file upload
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             }
         });
         return response.data;
@@ -24,13 +30,19 @@ const studentService = {
         }
         const response = await api.put(`/students/${studentId}`, formData, {
             headers: {
-                'Content-Type': 'multipart/form-data' // Set content type for file upload
+                'Content-Type': 'multipart/form-data', // Set content type for file upload
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             }
         });
         return response.data;
     },
     deleteStudent: async (studentId) => {
-        const response = await api.delete(`/students/${studentId}`);
+        const response = await api.delete(`/students/${studentId}`, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                Authorization: `Bearer ${localStorage.getItem('token')}`,  // Add token from localStorage
+            }
+        });
         return response.data;
     }
 };

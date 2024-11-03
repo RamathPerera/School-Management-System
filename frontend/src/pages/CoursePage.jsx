@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import courseService from '../services/courseService';
 import lecturerService from '../services/lecturerService';
 import LogoutButton from '../components/LogoutButton';
+import BackButton from '../components/BackButton';
 
 const CoursePage = () => {
     const headers = ['ID', 'Course Code', 'Course Name', 'Description', 'Lecturer ID', 'Actions'];
@@ -94,6 +95,7 @@ const CoursePage = () => {
     return (
         <div className="min-h-screen bg-purple-50 p-4 flex flex-col items-center">
             <div className='flex justify-between items-center w-3/4'>
+                <BackButton />
                 <h2 className="text-3xl font-bold text-purple-700 mb-6">Courses</h2>
                 <LogoutButton />
             </div>
