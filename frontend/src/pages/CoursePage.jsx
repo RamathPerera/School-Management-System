@@ -7,6 +7,7 @@ import UpdateCourseForm from '../components/Forms/UpdateCourseForm';
 import Swal from 'sweetalert2';
 import courseService from '../services/courseService';
 import lecturerService from '../services/lecturerService';
+import LogoutButton from '../components/LogoutButton';
 
 const CoursePage = () => {
     const headers = ['ID', 'Course Code', 'Course Name', 'Description', 'Lecturer ID', 'Actions'];
@@ -92,7 +93,10 @@ const CoursePage = () => {
 
     return (
         <div className="min-h-screen bg-purple-50 p-4 flex flex-col items-center">
-            <h2 className="text-3xl font-bold text-purple-700 mb-6">Courses</h2>
+            <div className='flex justify-between items-center w-3/4'>
+                <h2 className="text-3xl font-bold text-purple-700 mb-6">Courses</h2>
+                <LogoutButton />
+            </div>
             <table className="w-full max-w-4xl bg-white rounded-lg shadow-lg">
                 <TableHeader headers={headers} />
                 <tbody>
