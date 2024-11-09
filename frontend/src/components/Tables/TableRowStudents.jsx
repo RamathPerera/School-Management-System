@@ -2,6 +2,7 @@ import React from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 
 function TableRowStudents({ row, onEdit, onDelete }) {
+    console.log(row.birth_certificate)
     return (
         <tr className="text-center border-t hover:bg-purple-100">
             <td className="p-3">{row.id}</td>
@@ -11,11 +12,13 @@ function TableRowStudents({ row, onEdit, onDelete }) {
             <td className="p-3">{row.gender}</td>
             <td className="p-3">
                 {row.birth_certificate ? (
-                    <img
-                        src={`http://localhost:5000/images/${row.birth_certificate}`}
-                        alt="Birth Certificate"
-                        className="w-20 h-20 object-cover rounded"
-                    />
+                    <a href={`http://localhost:5000/uploads/${row.birth_certificate}`} target="_blank" rel="noopener noreferrer">
+                        <img
+                            src={`http://localhost:5000/uploads/${row.birth_certificate}`}
+                            alt="Birth Certificate"
+                            className="w-20 h-20 object-cover rounded"
+                        />
+                    </a>
                 ) : (
                     <span>No Image</span>
                 )}
